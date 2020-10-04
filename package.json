@@ -2,6 +2,7 @@
     "name": "risc64",
     "displayName": "risc64",
     "description": "RISC64 Assembly Syntax Highlighting for Visual Studio Code",
+    "repository": "https://github.com/Lycoder/risc64-vscode",
     "version": "1.0.0",
     "publisher": "Lycoder",
     "engines": {
