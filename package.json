@@ -1,0 +1,26 @@
+{
+    "name": "risc64",
+    "displayName": "risc64",
+    "description": "RISC64 Assembly Syntax Highlighting for Visual Studio Code",
+    "version": "1.0.0",
+    "publisher": "Lycoder",
+    "engines": {
+        "vscode": "^1.49.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "risc64",
+            "aliases": ["RISC64", "risc64"],
+            "extensions": ["asm"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "risc64",
+            "scopeName": "source.risc64",
+            "path": "./syntaxes/risc64.tmLanguage.json"
+        }]
+    }
+}

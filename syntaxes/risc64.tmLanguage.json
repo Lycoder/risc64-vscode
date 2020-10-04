@@ -1,0 +1,95 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "RISC64",
+	"patterns": [
+		{ "include": "#mnemonics" },
+		{ "include": "#constants" },
+		{ "include": "#strings" },
+		{ "include": "#entities" },
+		{ "include": "#registers" },
+		{ "include": "#punctuation" }
+	],
+	"repository": {
+		"mnemonics": {
+			"patterns": [
+				{
+					"name": "support.function.alu.risc64",
+					"match": "\\b(addsp|subsp|test|cmp|add|sub|mul|div|abs|slc|src|rlc|rrc|not|mod|and|xor|or|scl|sl|sr|rl|rr|i|d)(hw|dw|qw|b|w|d|q)?(nv|nz|nc|z|c|n|p)?([us]?)\\b"
+				},
+				{
+					"name": "support.function.lsu.risc64",
+					"match": "\\b(push|pop|lsp|lr|l|s)(hw|dw|qw|b|w|d|q)?(nv|nz|nc|z|c|n|p)?([us]?)\\b"
+				},
+				{
+					"name": "support.function.bnj.risc64",
+					"match": "\\b(call|ret|fj|b|j)(hw|dw|qw|b|w|d|q)?(nv|nz|nc|z|c|n|p)?([us]?)\\b"
+				},
+				{
+					"name": "support.function.sys.risc64",
+					"match": "\\b(halt)(hw|dw|qw|b|w|d|q)?(nv|nz|nc|z|c|n|p)?([us]?)\\b"
+				}
+				
+			]
+		},
+		"constants": {
+			"patterns": [
+				{
+					"name": "constant.numeric.hexadecimal.risc64",
+					"match": "\\#[+-]?0x\\h+"
+				},
+				{
+					"name": "constant.numeric.binary.risc64",
+					"match": "\\#[+-]?0b[01]+"
+				},
+				{
+					"name": "constant.numeric.decimal.risc64",
+					"match": "\\#[+-]?\\d+"
+				},
+				{
+					"name": "constant.numeric.tag.risc64",
+					"match": "\\#\\.[a-zA-Z_][[:alnum:]_-]*"
+				}
+			]
+		},
+		"entities": {
+			"patterns": [
+				{
+					"name": "variable.parameter.risc64",
+					"match": "\\.[a-zA-Z_][[:alnum:]_-]*:"
+				}
+			]
+		},
+		"registers": {
+			"patterns": [
+				{
+					"name": "storage.register.risc64",
+					"match": "%(r|f|t|gpr|fpr|tsr)\\d+"
+				}
+			]
+		},
+		"punctuation": {
+			"patterns": [
+				{
+					"name": "punctuation.terminator.statement.risc64",
+					"match": "\\;"
+				},
+				{
+					"name": "punctuation.separator.delimiter.comma.risc64",
+					"match": "\\,"
+				}
+			]
+		},
+		"strings": {
+			"name": "string.quoted.double.risc64",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.risc64",
+					"match": "\\\\."
+				}
+			]
+		}
+	},
+	"scopeName": "source.risc64"
+}
